@@ -11,10 +11,8 @@ const config = require('./config.js');
 const db = require('knex')({
     client: 'pg',
     connection: {
-        host: config.host,
-        user: config.userName,
-        password: config.dbID,
-        database: config.database
+        host: process.env.DATABASE_URL,
+        ssl: true
     }
 });
 ////
